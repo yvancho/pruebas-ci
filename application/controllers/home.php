@@ -40,7 +40,10 @@ class Home extends CI_Controller {
         $this->load->view('lista-usuarios', $data);
     }
 
-    function listarTablaPaginada2($nData) {
+    function listarTablaPaginada2($nData=NULL) {
+        if($nData == NULL){
+            $nData=0;
+        }
         $nPagXview = 10; //set el numero de paginas a mostrar        
         $limite = $nPagXview * $nData;
         $data['usuarios'] = $this->user->listarPaginacion($limite, $nPagXview);

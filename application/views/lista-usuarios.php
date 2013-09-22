@@ -35,8 +35,8 @@
                     <li><a href="#">«</a></li>
                     <li><a href="#">Prev</a></li>
                     <?php for ($index = 0; $index < $totalPagView; $index++): ?>
-                        <?php //$n=$index+1;?>
-                        <?php echo '<li><a href="'.base_url().'index.php/home/listarTablaPaginada2/' . $index . '">' . $index  . '</a></li>'; ?>
+                        <?php $nPag=$index+1;?>
+                        <?php echo '<li><a href="'.base_url().'index.php/home/listarTablaPaginada2/' . $index . '">' . $nPag  . '</a></li>'; ?>
                     <?php endfor; ?>
                     <li><a href="#">Next</a></li>
                     <li><a href="#">»</a></li>
