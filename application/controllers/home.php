@@ -1,5 +1,7 @@
 <?php
 
+$contador = 0;
+
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
@@ -40,14 +42,30 @@ class Home extends CI_Controller {
         $this->load->view('lista-usuarios', $data);
     }
 
-    function listarTablaPaginada2($nData=NULL) {
-        if($nData == NULL){
-            $nData=0;
+    function listarTablaPaginada2($nData = NULL, $suma = NULL) {
+        global $contador;
+        if ($nData == NULL) {
+            $nData = 0;
         }
-        $nPagXview = 10; //set el numero de paginas a mostrar        
+        if ($suma == null) {
+            $suma = 0;
+        }       
+        
+        $contador += $suma; //la suma esta en cero, tiene que aumentar +10
+
+        $nPagXview = 10; //set el numero de paginas a mostrar
+        $nBotones = 10; //numero de botones mostrados
+        $largo=$contador + $nBotones; //el contador empiza en 10;
+        
+        //$nBotonesVal = $suma + $nBotones;        
+        
         $limite = $nPagXview * $nData;
         $data['usuarios'] = $this->user->listarPaginacion($limite, $nPagXview);
         $data['totalPagView'] = $this->user->numTotalPagView($nPagXview);
+        $data['nBotones'] =$nBotones ;
+        $data['inicio'] = $largo-10;
+        $data['largo'] = $largo;
+
         $this->load->view('lista-usuarios', $data);
     }
 

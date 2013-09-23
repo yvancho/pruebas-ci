@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="<?php echo base_url()?>/assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url() ?>/assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
 
-        <script src="<?php echo base_url()?>/assets/js/jquery-1.10.2.js"></script>
-        <script src="<?php echo base_url()?>/assets/bootstrap/js/bootstrap.js"></script>
+        <script src="<?php echo base_url() ?>/assets/js/jquery-1.10.2.js"></script>
+        <script src="<?php echo base_url() ?>/assets/bootstrap/js/bootstrap.js"></script>
         <title></title>
     </head>
     <body>
@@ -34,17 +34,18 @@
                 <ul>
                     <li><a href="#">«</a></li>
                     <li><a href="#">Prev</a></li>
-                    <?php for ($index = 0; $index < $totalPagView; $index++): ?>
-                        <?php $nPag=$index+1;?>
-                        <?php echo '<li><a href="'.base_url().'index.php/home/listarTablaPaginada2/' . $index . '">' . $nPag  . '</a></li>'; ?>
+                    
+                    <?php for ($index = $inicio; $index < $largo; $index++): ?>
+                        <?php $nPag = $index + 1; ?>
+                        <?php echo '<li><a href="' . base_url() . 'index.php/home/listarTablaPaginada2/' . $index . '">' . $nPag . '</a></li>'; ?>
                     <?php endfor; ?>
-                    <li><a href="#">Next</a></li>
+                    
+                    <li><a href="<?php echo base_url() . 'index.php/home/listarTablaPaginada2/'. $largo . '/10';?>">Next</a></li>
                     <li><a href="#">»</a></li>
                 </ul>
-            </div>
-            <?php // for ($index = 1; $index <= $totalPagView; $index++): ?>
-            <?php // echo '<a href=\'?id=\'>' . $index . '</a>'; ?>
-    
+            </div> 
+            <?php echo 'Indice: '.$inicio;?>
+            <?php echo ' --- Numero en boton: '.$nBotones;?>
         </div>
     </body>
 </html>
