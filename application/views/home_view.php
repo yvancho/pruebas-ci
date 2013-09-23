@@ -17,6 +17,9 @@
             <li>
                 <a href="home/listarTablaPaginada2">Listar Usuarios - Paginado</a>
             </li>
+            <li>
+                <a href="home/listarJtable">Listar Usuarios - Paginado</a>
+            </li>
         </ol>
     </body>
 </html>

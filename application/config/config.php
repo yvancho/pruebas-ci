@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://pruebas-ci.local';
+$config['base_url']	= 'http://pruebas.ci.local';
 
 /*
 |--------------------------------------------------------------------------

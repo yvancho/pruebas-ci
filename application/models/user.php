@@ -24,17 +24,29 @@ Class User extends CI_Model {
         return $query->result_array();
     }
 
-    function listarPaginacion($limite,  $nPagXview) {
+    function listarTodosSorting($index, $pageSize) {
+        $query = $this->db->query('SELECT * FROM tb_mock LIMIT ' . $index . ',' . $pageSize . ';');
+        return $query->result();
+    }
+
+    function listarPaginacion($limite, $nPagXview) {
         $this->db->select('id, name, password');
         $this->db->from('tb_mock');
-        $this->db->limit($nPagXview,$limite);
+        $this->db->limit($nPagXview, $limite);
         $query = $this->db->get();
         return $query->result_array();
     }
 
     function numTotalPagView($nPagXview) {
-        $num= ceil($this->db->count_all('tb_mock')/ $nPagXview);
+        $num = ceil($this->db->count_all('tb_mock') / $nPagXview);
         return $num;
+    }
+
+    function numTotalObj() {
+        $this->db->select("COUNT(*) as RecordCount");
+        $this->db->from("tb_mock");
+        $query = $this->db->get();
+        return $query->row();
     }
 
 }

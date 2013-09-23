@@ -24,6 +24,31 @@ class Home extends CI_Controller {
         }
     }
 
+    function listarUsuarios() {
+
+        $index = ($this->input->get('jtStartIndex') ? $this->input->get('jtStartIndex') : 0);
+        $pageSize = ($this->input->get('jtPageSize') ? $this->input->get('jtPageSize') : 20);
+        
+        error_reporting(0);
+
+        $result = $this->user->numTotalObj();
+//        $row = $result;
+        $recordCount = $result->RecordCount; 
+
+        $result2 = $this->user->listarTodosSorting($index, $pageSize);
+
+        $jTableResult = array();
+        $jTableResult['Result'] = "OK";
+        $jTableResult['TotalRecordCount'] = $recordCount;
+        $jTableResult['Records'] = $result2;
+
+        echo json_encode($jTableResult);
+    }
+
+    function listarJtable() {
+        $this->load->view('lista-jtable');
+    }
+
     function logout() {
         $this->session->unset_userdata('logged_in');
         session_destroy();
@@ -49,21 +74,20 @@ class Home extends CI_Controller {
         }
         if ($suma == null) {
             $suma = 0;
-        }       
-        
+        }
+
         $contador += $suma; //la suma esta en cero, tiene que aumentar +10
 
         $nPagXview = 10; //set el numero de paginas a mostrar
         $nBotones = 10; //numero de botones mostrados
-        $largo=$contador + $nBotones; //el contador empiza en 10;
-        
+        $largo = $contador + $nBotones; //el contador empiza en 10;
         //$nBotonesVal = $suma + $nBotones;        
-        
+
         $limite = $nPagXview * $nData;
         $data['usuarios'] = $this->user->listarPaginacion($limite, $nPagXview);
         $data['totalPagView'] = $this->user->numTotalPagView($nPagXview);
-        $data['nBotones'] =$nBotones ;
-        $data['inicio'] = $largo-10;
+        $data['nBotones'] = $nBotones;
+        $data['inicio'] = $largo - 10;
         $data['largo'] = $largo;
 
         $this->load->view('lista-usuarios', $data);
