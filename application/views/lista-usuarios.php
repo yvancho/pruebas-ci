@@ -4,8 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<?php echo base_url()?>/assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
 
-        <script src="../../assets/js/jquery-1.10.2.js"></script>
-        <script src="../../assets/bootstrap/js/bootstrap.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/jquery-1.10.2.js"></script>
+        <script src="<?php echo base_url()?>/assets/bootstrap/js/bootstrap.js"></script>
         <title></title>
     </head>
     <body>

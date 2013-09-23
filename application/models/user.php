@@ -33,7 +33,7 @@ Class User extends CI_Model {
     }
 
     function numTotalPagView($nPagXview) {
-        $num= round($this->db->count_all('tb_mock')/ $nPagXview);
+        $num= ceil($this->db->count_all('tb_mock')/ $nPagXview);
         return $num;
     }
 
