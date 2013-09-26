@@ -11,14 +11,13 @@
         </br></br>
         <h2>Ejemplos:</h2>
         <ol>
-            <li>
-                <a href="home/listarTabla">Listar Usuarios</a>
-            </li>
-            <li>
-                <a href="home/listarTablaPaginada2">Listar Usuarios - Paginado</a>
-            </li>
+            <li><a href="home/listarTabla">Listar Usuarios</a></li>
+            <li><a href="home/listarTablaPaginada2">Listar Usuarios - Paginado</a></li>
             <li>
                 <a href="home/listarJtable">Listar Usuarios - Paginado</a>
+            </li>
+            <li>
+                <a href="upload">Subir Archivos - UPLOAD</a>
             </li>
         </ol>
     </body>
