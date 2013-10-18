@@ -19,6 +19,9 @@
             <li>
                 <a href="upload">Subir Archivos - UPLOAD</a>
             </li>
+            <li>
+                <a href="selectdemo">Select tag con Json y Chosen.js</a>
+            </li>
         </ol>
     </body>
 </html>

@@ -49,6 +49,12 @@ Class User extends CI_Model {
         return $query->row();
     }
 
+    function listaSelect(){
+        $this->db->select('id, name');
+        $this->db->from("tb_mock");
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
 
 ?>
