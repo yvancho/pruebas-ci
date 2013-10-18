@@ -22,7 +22,7 @@ class Upload extends CI_Controller {
         $config['max_size'] = '2048';
         $config['max_width'] = '2048';
         $config['max_height'] = '2048';
-//      $config['encrypt_name'] = TRUE;
+        $config['encrypt_name'] = TRUE;
         $config['remove_spaces'] = true;
         $this->load->library('upload', $config);
 
