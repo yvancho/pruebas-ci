@@ -24,14 +24,11 @@
                     alert(selected_value);
                 });
 
-                $(function() {
-                    var $select_usuarios = $('#elSelect');
-                    $.each(App.usuario, function(i,usuario) {
-                        var option = $('<option value=' + usuario.id + '>' + usuario.name + '</option>');
-                        $select_usuarios.append(option);
-                    });
+                var $select_usuarios = $('#elSelect');
+                $.each(App.usuario, function(i, usuario) {
+                    var option = $('<option value=' + usuario.id + '>' + usuario.name + '</option>');
+                    $select_usuarios.append(option);
                 });
-
 
 
             });
