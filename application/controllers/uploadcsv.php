@@ -22,10 +22,9 @@ class Uploadcsv extends CI_Controller {
         $filePath = './uploads/products.csv';
         $data['csvData'] = $this->csvreader->parse_file($filePath);
         
-//        var_dump($data['csvData']);
+        //var_dump($data['csvData']);
         
         $this->load->view('csv_view', $data);
-//        
     }
 
 }
